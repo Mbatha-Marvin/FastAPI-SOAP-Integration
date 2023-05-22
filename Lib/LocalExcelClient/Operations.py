@@ -1,13 +1,14 @@
 import polars as pl
 import os
+
 pl.Config.set_tbl_cols(5).set_tbl_rows(5).set_fmt_str_lengths(12)
 
+
 def getAllRecords() -> pl.DataFrame:
-    
     root_dir = os.getcwd()
     excel_file = root_dir + "/Lib/LocalExcelClient/Data/K052121-01.xlsx"
     all_records = pl.read_excel(excel_file).fill_null("")
-       
+
     return all_records
 
 

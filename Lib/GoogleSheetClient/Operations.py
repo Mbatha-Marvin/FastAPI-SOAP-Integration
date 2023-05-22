@@ -7,9 +7,7 @@ pl.Config.set_tbl_cols(5).set_tbl_rows(5).set_fmt_str_lengths(12)
 
 def getAllRecords() -> pl.DataFrame:
     root_dir = os.getcwd()
-    credential_json_file: str = (
-        root_dir + "/valid-shuttle-384807-e2fb1acbd63c.json"
-    )
+    credential_json_file: str = root_dir + "/valid-shuttle-384807-e2fb1acbd63c.json"
     spreadsheet_title: str = "K052121-01"
     sheet_name: str = "Sheet1"
 

@@ -13,7 +13,7 @@ def CheckOrderStatus(
 
     if (DealerAccountNumber == None) | (DealerAccountNumber == ""):
         DealerAccountNumber = "18882"
-    if (Password == None)| (Password == ""):
+    if (Password == None) | (Password == ""):
         Password = "48e000f8bf98457caa78bfcc0b14d3e8"
 
     if (UserId == None) | (UserId == ""):
@@ -35,29 +35,27 @@ def SubmitPurchaseOrder(
     IsDropShip: bool | str = "",
     PaymentMethod: dict | str = "",
     ShipVia: dict | str = "",
-    
-    BypassAddressValidation :str="",
-    ConfirmToEmailAddress :str="",
-    ConfirmToName :str="",
-    CreditCardCV2 :str="",
-    DealerAccountNumber :str="",
-    DetailLines:str ="",
-    ExternalPO :str="",
-    KrollVaultCreditCardDescription :str="",
-    Password :str="",
-    PurchaseOrderNumber :str="",
-    ShipToAddress1 :str="",
-    ShipToAddress2 :str="",
-    ShipToAddress3 :str="",
-    ShipToCity :str="",
-    ShipToCountryCode :str="",
-    ShipToName :str="",
-    ShipToPostalCode :str="",
-    ShipToStateProvince :str="",
-    ShipToTelephoneNumber :str="",
-
-    SignatureRequired :str="",
-    UserId :str="",
+    BypassAddressValidation: str = "",
+    ConfirmToEmailAddress: str = "",
+    ConfirmToName: str = "",
+    CreditCardCV2: str = "",
+    DealerAccountNumber: str = "",
+    DetailLines: str = "",
+    ExternalPO: str = "",
+    KrollVaultCreditCardDescription: str = "",
+    Password: str = "",
+    PurchaseOrderNumber: str = "",
+    ShipToAddress1: str = "",
+    ShipToAddress2: str = "",
+    ShipToAddress3: str = "",
+    ShipToCity: str = "",
+    ShipToCountryCode: str = "",
+    ShipToName: str = "",
+    ShipToPostalCode: str = "",
+    ShipToStateProvince: str = "",
+    ShipToTelephoneNumber: str = "",
+    SignatureRequired: str = "",
+    UserId: str = "",
 ) -> dict:
     if (DealerAccountNumber == None) | (DealerAccountNumber == ""):
         DealerAccountNumber = "18882"
