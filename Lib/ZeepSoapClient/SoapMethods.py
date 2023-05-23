@@ -35,12 +35,12 @@ def SubmitPurchaseOrder(
     IsDropShip: bool | str = "",
     PaymentMethod: dict | str = "",
     ShipVia: dict | str = "",
-    BypassAddressValidation: str = "",
+    BypassAddressValidation: bool = True,
     ConfirmToEmailAddress: str = "",
     ConfirmToName: str = "",
     CreditCardCV2: str = "",
     DealerAccountNumber: str = "",
-    DetailLines: str = "",
+    DetailLines: list[dict] | str = "",
     ExternalPO: str = "",
     KrollVaultCreditCardDescription: str = "",
     Password: str = "",
@@ -54,7 +54,7 @@ def SubmitPurchaseOrder(
     ShipToPostalCode: str = "",
     ShipToStateProvince: str = "",
     ShipToTelephoneNumber: str = "",
-    SignatureRequired: str = "",
+    SignatureRequired: bool = False,
     UserId: str = "",
 ) -> dict:
     if (DealerAccountNumber == None) | (DealerAccountNumber == ""):
@@ -63,6 +63,14 @@ def SubmitPurchaseOrder(
         Password = "48e000f8bf98457caa78bfcc0b14d3e8"
     if (UserId == None) | (UserId == ""):
         UserId = "purchasing@ecoppolicesupply.com"
+        
+    if (DetailLines == "") | (DetailLines ==  None):
+        DetailLines = [
+        {"LineNumber": 1, "QuantityOrdered": 1, "Sku": "TSP-5554219006"},
+        {"LineNumber": 2, "QuantityOrdered": 1, "Sku": "STRE-69280"},
+        {"LineNumber": 3, "QuantityOrdered": 1, "Sku": "A56001"},
+        {"LineNumber": 4, "QuantityOrdered": 1, "Sku": "STRE-69282"},
+    ]
 
     cumpulsoryFieldsList = [FulfillmentMethod, IsDropShip, PaymentMethod, ShipVia]
 
