@@ -65,12 +65,11 @@ def SubmitPurchaseOrder(
         UserId = "purchasing@ecoppolicesupply.com"
         
     if (DetailLines == "") | (DetailLines ==  None):
-        DetailLines = [
-        {"LineNumber": 1, "QuantityOrdered": 1, "Sku": "TSP-5554219006"},
-        {"LineNumber": 2, "QuantityOrdered": 1, "Sku": "STRE-69280"},
-        {"LineNumber": 3, "QuantityOrdered": 1, "Sku": "A56001"},
-        {"LineNumber": 4, "QuantityOrdered": 1, "Sku": "STRE-69282"},
-    ]
+        DetailLines =[
+    { "LineNumber": 1, "QuantityOrdered": 1, "Sku": "STRE-69280"},
+    { "LineNumber": 2, "QuantityOrdered": 1, "Sku": "A56001"},
+    { "LineNumber": 3, "QuantityOrdered": 1, "Sku": "STRE-69282"}
+]
 
     cumpulsoryFieldsList = [FulfillmentMethod, IsDropShip, PaymentMethod, ShipVia]
 

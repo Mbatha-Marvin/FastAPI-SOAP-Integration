@@ -14,12 +14,7 @@ class SubmitPurchaseOrderRequestBody(BaseModel):
     ConfirmToName: str = ""
     CreditCardCV2: str = ""
     DealerAccountNumber: str = ""
-    DetailLines: list[dict] = [
-        {"LineNumber": 1, "QuantityOrdered": 1, "Sku": "TSP-5554219006"},
-        {"LineNumber": 2, "QuantityOrdered": 1, "Sku": "STRE-69280"},
-        {"LineNumber": 3, "QuantityOrdered": 1, "Sku": "A56001"},
-        {"LineNumber": 4, "QuantityOrdered": 1, "Sku": "STRE-69282"},
-    ]
+    DetailLines: list[dict] 
     ExternalPO: str = ""
     FulfillmentMethod: str
     IsDropShip: bool
