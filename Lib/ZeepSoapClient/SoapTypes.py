@@ -5,16 +5,28 @@ wsdl = "https://apiv2.krollcorp.com/EBusinessTest/Kroll.Dealer.EBusiness.svc/Doc
 
 
 def PurchaseOrderDetailLineType(
-    LineNumber: Optional[int] = None,
-    QuantityOrdered: Optional[int] = None,
-    Sku: Optional[str] = None,
+    LineNumber: int,
+    QuantityOrdered: int,
+    Sku: str,
 ):
+    # Type checking
+    if all(type(field) == type(1) for field in [LineNumber, QuantityOrdered]):
+        # print("Empty String Test Passed\n")
+        pass
+    else:
+        return "Purchase Order Detail Line Fields (LineNumber, QuantityOrdered) Must be of type integer"
+
+    if type(Sku) != type(""):
+        return "Purchase Order Detail Line Fields (Sku) Must be of type string"
+
+    # Test for empty string
     if all(field != "" for field in [LineNumber, QuantityOrdered, Sku]):
         # print("Empty String Test Passed\n")
         pass
     else:
         return "Purchase Order Detail Line Fields are compulsory"
 
+    # test for None
     if all(field is not None for field in [LineNumber, QuantityOrdered, Sku]):
         # print("Not None Test Passed\n")
         pass

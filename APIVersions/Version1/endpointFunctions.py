@@ -49,7 +49,7 @@ def EndPointSubmitPurchaseOrder(requestBody: SubmitPurchaseOrderRequestBody):
     ConfirmToName = requestBody.ConfirmToName
     CreditCardCV2 = requestBody.CreditCardCV2
     DealerAccountNumber = requestBody.DealerAccountNumber
-    DetailLines = requestBody.DetailLines
+    RawDetailLines = requestBody.DetailLines
     ExternalPO = requestBody.ExternalPO
     FulfillmentMethod = requestBody.FulfillmentMethod
     IsDropShip = requestBody.IsDropShip
@@ -82,6 +82,7 @@ def EndPointSubmitPurchaseOrder(requestBody: SubmitPurchaseOrderRequestBody):
     )
     PaymentMethod = PaymentMethodType("AccountTerms")
     ShipVia = ShipViaType("FlatRate")
+    DetailLines = ArrayOfPurchaseOrderDetailLineType(RawDetailLines)
 
     response = SubmitPurchaseOrder(
         BypassAddressValidation=BypassAddressValidation,
